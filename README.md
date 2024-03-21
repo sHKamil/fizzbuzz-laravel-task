@@ -17,6 +17,10 @@
 - XML PHP Extension
 - Composer
 
+#### Instalacja
+- Pobierz repozytorium
+- Uruchom komendę ```composer install``` aby zainstalować dependencje
+
 ## Treść zadania
 
 Wyświetl 100 liczb, dla liczb podzielnych przez 3 niech wyświetli tekst "Fizz", dla liczb podzielnych przez 5 "Buzz", a dla liczb podzielnych jednocześnie przez 3 oraz 5 "FizzBuzz".
