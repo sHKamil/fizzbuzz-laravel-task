@@ -19,7 +19,7 @@ class fizzbuzz extends Command
      *
      * @var string
      */
-    protected $description = 'By default without any argument displays 100 with fizz, buzz or fizzbuzz. With number for example "php artisan app:fizzbuzz 7" it will check this number seven and return fizz, buzz or fizzbuzz.';
+    protected $description = 'Without any argument, by default it displays 100 numbers and if the number can be divided by 3 it displays Fizz instead of a number, if by 5 it displays Buzz, and if by 3 and 5 it displays FizzBuzz. With argument (number) for example "php artisan app:fizzbuzz 7" it will check this number and return fizz, buzz, fizzbuzz or number.';
 
     /**
      * Execute the console command.
