@@ -12,14 +12,14 @@ class fizzbuzz extends Command
      *
      * @var string
      */
-    protected $signature = 'app:fizzbuzz {number?}';
+    protected $signature = 'fizzbuzz {number?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Without any argument, by default it displays 100 numbers and if the number can be divided by 3 it displays Fizz instead of a number, if by 5 it displays Buzz, and if by 3 and 5 it displays FizzBuzz. With argument (number) for example "php artisan app:fizzbuzz 7" it will check this number and return fizz, buzz, fizzbuzz or number.';
+    protected $description = 'Without any argument, by default it displays 100 numbers and if the number can be divided by 3 it displays Fizz instead of a number, if by 5 it displays Buzz, and if by 3 and 5 it displays FizzBuzz. With argument (number) for example "php artisan fizzbuzz 7" it will check this number and return fizz, buzz, fizzbuzz or number.';
 
     /**
      * Execute the console command.
