@@ -16,10 +16,21 @@
 - Tokenizer PHP Extension
 - XML PHP Extension
 - Composer
+- Docker (Optional)
 
-#### Instalacja
+## Instalacja
 - Pobierz repozytorium
 - Uruchom komendę ```composer install``` aby zainstalować dependencje
+
+#### Uruchamianie z dockerem (Opcjonalnie)
+- Pobierz repozytorium
+- Uruchom komendę ```composer install``` aby zainstalować dependencje
+- Uruchom komendę ```php artisan sail:install```
+- Wystartuj dockera za pomocą komendy ```./vendor/bin/sail up``` (Domyślnie http://0.0.0.0/)
+
+## Uruchamianie testów
+Do uruchomienia testów wystarczy komenda ```php artisan test```
+natomiast aby uruchomić testy w kontenerze dockerowym należy użyć komendy ```./vendor/bin/sail artisan test```
 
 ## Treść zadania
 
