@@ -2,7 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Services\FizzbuzzService;
+use App\Services\FizzbuzzResponseService;
+use App\Validation\FizzbuzzArgumentValidator;
 use Illuminate\Console\Command;
 
 class fizzbuzz extends Command
@@ -26,16 +27,18 @@ class fizzbuzz extends Command
      */
     public function handle()
     {
-        $number = (int) $this->argument(key: 'number');
-        $fizzBuzz = new FizzbuzzService;
+        $argument = $this->argument(key: 'number');
 
-        if($this->argument(key: 'number')!== null && is_numeric($this->argument(key: 'number'))){
-            $this->info(string: $fizzBuzz->associateFizzBuzz($number));
-        } else {
-            for ($i=1; $i <= 100; $i++) { 
-                $this->info(string: $fizzBuzz->associateFizzBuzz($i));
-            }
+        if (!FizzbuzzArgumentValidator::validate($argument)) {
+            $this->error('The argument must be numeric.');
+            return;
         }
+
+        $fizzbuzzResponse = FizzbuzzResponseService::getResponse($argument);
+        foreach ($fizzbuzzResponse as $response) {
+            $this->info(string: $response);
+        }
+
         return;
     }
 }
