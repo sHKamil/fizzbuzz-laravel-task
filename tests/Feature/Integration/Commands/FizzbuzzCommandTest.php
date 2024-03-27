@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Console\Commands;
+namespace Tests\Feature\Integration\Console\Commands;
 
 use Tests\TestCase;
 
@@ -34,5 +34,15 @@ class FizzbuzzCommandTest extends TestCase
 
         // Assert that the output is 'FizzBuzz'
         $output->expectsOutput('FizzBuzz');
+    }
+
+    /** @test */
+    public function test_command_returns_number()
+    {
+        // Execute the command with the argument '15'
+        $output = $this->artisan('fizzbuzz', ['number' => '2']);
+
+        // Assert that the output is 'FizzBuzz'
+        $output->expectsOutput(2);
     }
 }
